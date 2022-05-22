@@ -2,7 +2,7 @@
   "workouts": [
     {
       "id": "61dbae02-c147-4e28-863c-db7bd402b2d6",
-      "name": "Tommy V",
+      "name": "TommyV",
       "mode": "For Time",
       "equipment": [
         "barbell",
@@ -85,6 +85,9 @@
       "id": "079b8012-9174-4725-9903-61bb933b9807",
       "createdAt": "5/21/2022",
       "updatedAt": "5/21/2022"
+    },{
+      "id":"2",
+      "name": "Perreo 2 Testeo"
     }
   ]
 }
