@@ -8,19 +8,18 @@ const getAllWorkouts = (req, res) => {
 };
 
 const getOneWorkout = (req, res) => {
-  const {
-    params: { workoutId },
-  } = req;
+  const {params: { workoutId }} = req; 
+
   if (!workoutId) {
     return;
   }
   const workout = workoutService.getOneWorkout(workoutId);
-  console.log(workoutId);
   res.send({ status: "OK", data: workout });
 };
 
 const createNewWorkout = (req, res) => {
   const { body } = req;
+  console.log(body);
   //Validate if the body params are ok
   if (
     !body.name ||
@@ -53,8 +52,11 @@ const updateOneWorkout = (req, res) => {
 };
 
 const deleteOneWorkout = (req, res) => {
-  const deleteWorkout = workoutService.deleteOneWorkout();
-  res.send("Delete an existing workout");
+  const {params:{workoutId }} = req;
+
+
+  const deletedWorkout = workoutService.deleteOneWorkout(workoutId);
+  res.send({status: 'OK', data:'Workout with id' + deletedWorkout.workoutId + 'deleted'});
 };
 
 module.exports = {
