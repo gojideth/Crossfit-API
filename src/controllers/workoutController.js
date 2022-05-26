@@ -52,8 +52,7 @@ const updateOneWorkout = (req, res) => {
 };
 
 const deleteOneWorkout = (req, res) => {
-  const {params:{workoutId }} = req;
-
+  const {params:{workoutId }} = req;  
 
   const deletedWorkout = workoutService.deleteOneWorkout(workoutId);
   res.send({status: 'OK', data:'Workout with id' + deletedWorkout.workoutId + 'deleted'});

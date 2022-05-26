@@ -28,16 +28,15 @@ const createNewWorkout = (entryWorkout) => {
   return entryWorkout;
 };
 
-/**DB.workouts.forEach((workout)=>{
-  console.log(workout.id + "--" + typeof workout.name + "---" + workout.name); 
-});
-const test = DB.workouts.find((workout) => {
-  if (workout.name === "Perreo 2 Testeo") {
-    return workout;
-  } else {
+const deleteWorkout = (workoutId) => {
+  const exist = DB.workouts.findIndex((workout) => {
+    workout.id === workoutId;
+  });
+  if (exist === -1) {
     return;
   }
-});
-console.log("---> " + test.name);*/
+  DB.workouts.splice(exist, 1);
+  
+};
 
 module.exports = { getAllWorkouts, createNewWorkout, getWorkoutById };
